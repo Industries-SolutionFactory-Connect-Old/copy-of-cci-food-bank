@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: copy-of-cci-food-bank
+    package:
+        name: copy-of-cci-food-bank
+        api_version: '59.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/copy-of-cci-food-bank/tests
+            options:
+                outputdir: robot/copy-of-cci-food-bank/results
+
+    robot_testdoc:
+        options:
+            path: robot/copy-of-cci-food-bank/tests
+            output: robot/copy-of-cci-food-bank/doc/copy-of-cci-food-bank_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
